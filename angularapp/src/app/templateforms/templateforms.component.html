@@ -1,0 +1,130 @@
+<!-- <mat-card class="login-page">
+  <mat-card-title> Login (Template-Driven) </mat-card-title>
+  <mat-card-content>
+    <form class="login-form" #loginForm="ngForm"> -->
+      <!-- <mat-form-field>              
+              <input matInput type="email" name="email" ngModel #email="ngModel" required email minlength="3" maxlength="20" placeholder="Email">
+              <mat-error *ngIf="email.errors?.required">The email is mandatory</mat-error>
+              <mat-error *ngIf="email.errors?.minlength">
+                your email must have minimum {{email.errors?.minlength.requiredLength}} chars,
+                but it only has {{email.errors?.minlength.actualLength}}.
+              </mat-error>
+            </mat-form-field>  -->
+            
+            <!-- <input matInput type="email" name="email" ngModel #email="ngModel" required email minlength="3" maxlength="35" placeholder="Email" (blur)="validateEmail(email.value)">
+  
+            <mat-error *ngIf="email.errors?.required">The email is mandatory</mat-error>
+            <mat-error *ngIf="email.errors?.minlength">your email must have minimum {{email.errors?.minlength.requiredLength}} chars,
+              but it only has {{email.errors?.minlength.actualLength}}.</mat-error>
+            <mat-error *ngIf="email.errors?.email">Please enter a valid email address</mat-error>
+            <mat-error *ngIf="!isValidEmail">Please enter a valid domain email in the form of abc@codemindtechnology.com</mat-error>          
+        
+      <mat-form-field>
+        <input matInput ngModel #password="ngModel" name="password" type="password" placeholder="Password" required />
+        <mat-error *ngIf="password.errors?.required">The password is mandatory</mat-error>
+      </mat-form-field>
+      <select class="form-control" name="course" [ngModel]="defaultValue">
+        <option *ngFor="let course of courses" value="{{ course }}">
+          {{ course }}
+        </option>
+      </select> -->
+      <!-- <mat-select [value]="selectedOption">
+              <mat-option value="1">One</mat-option>
+              <mat-option value="2">Two</mat-option>
+            </mat-select> -->
+      <!-- <div class="form-group" *ngFor="let gender of genders">
+        <input type="radio" name="gender" id="gender" value="{{ gender.value }}" [ngModel]="defaultGender"
+          class="custom-control custom-radio" />
+        <label for="{{ gender.id }}">{{ gender.value }}</label>
+      </div>
+      <button mat-raised-button color="primary" (click)="login(loginForm)">
+        Login
+      </button>
+    </form>
+    <div class="form-val"> -->
+      <!-- {{ loginForm.value | json}} -->
+    <!-- </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="row justify-content-center mt2" *ngIf="isSubmitted">
+  <div class="col-md-6 rounded shadow py-4">
+    <h2>Form Data</h2>
+    <p>
+      Email: <strong>{{ formData.email }}</strong>
+    </p>
+    <p>
+      Password: <strong>{{ formData.password }}</strong>
+    </p>
+    <p>
+      Course: <strong>{{ formData.course }}</strong>
+    </p>
+    <p>
+      Gender: <strong>{{ formData.gender }}</strong>
+    </p>
+  </div>
+</div> -->
+
+<!-- (blur)="checkemail(email)" -->
+<!-- <small class="text-danger" *ngIf="isEmailValid">Email domain not allowed</small> -->
+
+
+
+<mat-card class="login-page"> 
+  <mat-card-title> Template-Driven Form </mat-card-title>
+<mat-card-content id="form"> 
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" class="login-form"> 
+  <mat-form-field> 
+    <input matInput ngModel #firstName="ngModel" type="text" name="firstName" id="firstName" required minlength="5" maxlength="10" [(ngModel)]="user.firstName" placeholder="Name"> 
+      <mat-error *ngIf="firstName.errors?.required">The firstName is mandatory</mat-error> 
+    </mat-form-field>
+    <mat-form-field> 
+    <input matInput ngModel #lastName="ngModel" type="text" name="lastName" id="lastName" required maxlength="10" [(ngModel)]="user.lastName" placeholder="Last Name"> 
+    <mat-error *ngIf="lastName.errors?.required">The lastName is mandatory</mat-error> 
+  </mat-form-field>
+<mat-form-field>
+    <input matInput ngModel #age="ngModel" type="number" name="age" id="age" required min="17" max="20" [(ngModel)]="user.age" placeholder="Age">   
+    <mat-error *ngIf="age.errors?.required">The age is mandatory</mat-error> 
+  </mat-form-field>
+<mat-form-field> 
+    <input matInput ngModel #email="ngModel" type="email" name="email" id="email" required email [(ngModel)]="user.email" placeholder="Email">
+    <mat-error *ngIf="email.errors?.required">The email is mandatory</mat-error>
+  </mat-form-field>
+  <mat-form-field> 
+    <input matInput ngModel #phone="ngModel" type="tel" name="phone" id="phone" required maxlength="10" pattern="[0-9]*" [(ngModel)]="user.phone" placeholder="Phone Number">  
+    <mat-error *ngIf="phone.errors?.required">The phone is mandatory</mat-error>
+  </mat-form-field>
+<div> 
+  <select class="form-control" name="city" [ngModel]="defaultCity" id="city">
+    <option *ngFor="let citys of city" value="{{ citys }}">
+      {{ citys }}
+    </option>
+  </select>
+</div>
+  <!-- <mat-form-field> -->
+    <!-- <label for="city">City:</label> -->
+    <!-- <select  name="city" id="city" [(ngModel)]="user.city">
+      <option value="Mumbai">Mumbai</option>
+      <option value="Kolkata">Kolkata</option>
+      <option value="Delhi">Delhi</option>
+    </select>
+  </mat-form-field> -->   
+
+  <div> 
+    <input type="radio" name="gender" id="male" value="male" required [(ngModel)]="user.gender" placeholder="Gender">Male
+    <input type="radio" name="gender" id="female" value="female" [(ngModel)]="user.gender">Female 
+  </div>
+
+  <mat-form-field> 
+    <input matInput ngModel #password="ngModel" type="password" name="password" id="password" required [(ngModel)]="user.password" placeholder="Password">
+    <mat-error *ngIf="password.errors?.required">The password is mandatory</mat-error>
+  </mat-form-field>
+      <mat-form-field> 
+    <input matInput ngModel type="password" name="confirmPassword" id="confirmPassword" required [(ngModel)]="confirmPassword" placeholder="confirm Password">
+    <mat-error *ngIf="phone.errors?.required">The confirmPassword is mandatory</mat-error>
+    <span *ngIf="myForm.submitted && confirmPassword !== user.password" class="error">Passwords must match</span> 
+  </mat-form-field>
+  <button mat-raised-button color="primary"  type="submit">Submit</button>
+</form>
+</mat-card-content>
+</mat-card>

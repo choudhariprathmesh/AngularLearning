@@ -1,0 +1,197 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <h2>Reactive Form</h2>
+        <div class="col-md-6 text-left rounded shadow py-5">
+            <form [formGroup]="myReactiveForm" (ngSubmit)="OnSubmit()">
+                <div formGroupName="userDeatils">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" formControlName="username" class="form-control" id="username"
+                            placeholder="Enter user name">
+                            <small class="text-danger" *ngIf="!myReactiveForm.get('userDeatils.username').valid && myReactiveForm.get('userDeatils.username').touched">                        
+                                 <span *ngIf="myReactiveForm.get('userDeatils.username').errors['required']"> User name not valid</span>
+                                 <span *ngIf="myReactiveForm.get('userDeatils.username').errors['namesNotAllowed']">
+                                               {{myReactiveForm.get('userDeatils.username').value}} is not allowed</span>
+                            </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" formControlName="email" class="form-control" id="email"
+                            placeholder="Enter email address">
+                        <small class="text-danger"
+                            *ngIf="!myReactiveForm.get('userDeatils.email').valid && myReactiveForm.get('userDeatils.email').touched">
+                            <span *ngIf="myReactiveForm.get('userDeatils.email').errors['required']"> Please enter valid email </span>
+                            <span *ngIf="myReactiveForm.get('userDeatils.email').errors['emailNotAllowed']">
+                              <!-- {{myReactiveForm.get('userDeatils.email').value}} -->
+                               That username is taken. Try another. </span>
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select formControlName="course" id="course" class="form-control">
+                        <option value="Angular">Angular</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="TypeScript">TypeScript</option>
+                    </select>
+                </div>
+                <div class="formgroup" formArrayName="skills">
+                  <label>Skills</label>
+                  <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+                      <input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills">
+                      
+                  </ng-container>
+                  
+                  <button class="btn btn-light btn-small mt-4 btn-add" (click)="OnAddSkills()"><i>+</i>Add Skills</button>
+                  
+              </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="radio" formControlName="gender" value="male" id="gender">
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" formControlName="gender" value="female" id="gender">
+                        Female
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div class="row justify-content-center mt-2" *ngIf="isSubmitted">
+                <div class="col-md-6 rounded shadow py4">
+                    <h2>Form Data</h2>
+                    <p>Username: <strong> {{ myReactiveForm.get('userDeatils.username').value}}</strong></p>
+                    <p>Email: <strong> {{ myReactiveForm.get('userDeatils.email').value}}</strong></p>
+                    <p>Course: <strong> {{ myReactiveForm.get('course').value}}</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5">
+            <form [formGroup]="myForm" (ngSubmit)="isSubmit()">
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" formControlName="email" class="form-control" id="email" placeholder="Enter email address">
+                        <small class="text-danger" *ngIf="!myForm.get('email').valid && myForm.get('email').touched">Please enter valid email</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subscription" >Subscription:</label>
+                        <select formControlName="subscription" id="subscription" class="form-control">
+                          <option value="Basic">Basic</option>
+                          <option value="Advanced">Advanced</option>
+                          <option value="Pro">Pro</option>
+                        </select>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" formControlName="password" id="password" class="form-control" placeholder="Enter password">
+                        <small class="text-danger" *ngIf="myForm.controls.password.invalid && myForm.controls.password.touched">
+                            <span>Password is required.</span>
+                          </small> -->
+                        <!-- <small class="text-danger" *ngIf="!myForm.get('password').required">Please enter valid password</small> -->
+                    <!-- </div>
+
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" formControlName="date" id="date" class="form-control">
+                        <small class="text-danger" *ngIf="myForm.controls.date.invalid && myForm.controls.date.touched">
+                          <span *ngIf="myForm.controls.date.errors.required">Date is required and Date must be today or in the future..</span>
+                          <span *ngIf="myForm.controls.date.errors.futureDate">Date must be today or in the future.</span>
+                        </small>
+                      </div>
+                      <div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+            </form>
+            <div class="row justify-content-center mt-2" *ngIf="Submitted">
+                <div class="col-md-6 rounded shadow py4">
+                    <h2>Form Data</h2>
+                    <p>Email: <strong> {{ myForm.get('email').value}}</strong></p>
+                    <p>Subscription: <strong> {{ myForm.get('subscription').value}}</strong></p>
+                    <p>Password: <strong> {{ myForm.get('password').value}}</strong></p>
+                    <p>Date: <strong> {{ myForm.get('date').value}}</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- hbjvbgfgyfgqihfuhequrfbh -->
+
+<!-- <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
+  <mat-form-field fxFlex>
+    <mat-label>Full Name*</mat-label>
+    <input matInput type="text" formControlName="fullName" required>
+  </mat-form-field>
+  <mat-form-field fxFlex>
+    <mat-label>Birthdate*</mat-label>
+    <input matInput type="date" formControlName="birthdate" required>
+  </mat-form-field>
+  <mat-form-field fxFlex>
+    <mat-label>Gender*</mat-label>
+    <mat-select formControlName="gender" required>
+      <mat-option value="" disabled selected>Select a gender</mat-option>
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Female</mat-option>
+      <mat-option value="Other">Other</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field fxFlex>
+    <mat-label>Country*</mat-label>
+    <mat-select formControlName="country" required>
+      <mat-option value="" disabled selected>Select a country</mat-option>
+      <mat-option value="US">United States</mat-option>
+      <mat-option value="CA">Canada</mat-option>
+      <mat-option value="MX">Mexico</mat-option>
+      Add more countries as needed
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field fxFlex>
+    <mat-label>Phone Number*</mat-label>
+    <input matInput type="tel" formControlName="phoneNumber" required>
+  </mat-form-field>
+  <mat-form-field fxFlex>
+    <mat-label>Bio</mat-label>
+    <textarea matInput formControlName="bio"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="userDetailsForm.invalid">Submit</button>
+</form>
+
+
+
+<form [formGroup]="accountDetailsForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Username*</mat-label>
+    <input matInput type="text" formControlName="userName" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email*</mat-label>
+    <input matInput type="email" formControlName="email" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password*</mat-label>
+    <input matInput type="password" formControlName="password" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Confirm Password*</mat-label>
+    <input matInput type="password" formControlName="confirmPassword" required>
+    <mat-error *ngIf="passwordsDoNotMatch()">Passwords do not match.</mat-error>
+  </mat-form-field>
+  <mat-checkbox formControlName="terms">
+    I accept the terms and conditions.
+  </mat-checkbox>
+  <button mat-raised-button color="primary" type="submit" [disabled]="accountDetailsForm.invalid || !accountDetailsForm.get('terms').value">Create Account</button>
+</form> -->
+

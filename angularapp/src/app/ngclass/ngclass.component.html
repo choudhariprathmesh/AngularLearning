@@ -1,0 +1,39 @@
+<!-- <h4>Ng Class Example : </h4>
+
+<ul *ngFor="let person of peoples">
+<li [ngClass]="{
+    'text-success': person.country === 'UK',
+    'text-primary': person.country === 'USA',
+    'text-danger': person.country === 'HK'
+}">
+    {{person.name}} {{person.country}}
+</li>
+</ul> -->
+<div class="as"> 
+<!-- <button (click)="addClick()">Display Details</button> -->
+<button type="button" class="btn btn-info"  (click)="addClick()">Display Details</button> 
+<br>
+<p *ngIf="showDetails">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnoCRkfMZNm-LuCXYUwYSWnDm1truugb6J_A&usqp=CAU" alt="a.p.j.abdul kalam" height="100px" width="100px" style=" text-align: center;">
+  Avul Pakir Jainulabdeen Abdul Kalam (15 October
+  1931-27 July 2015) <br> was an Indian aerospace scientist and statesman who
+  served as the 11th President of India from 2002 to 2007.<br> He was born and
+  raised in Rameswaram, Tamil Nadu and studied physics and aerospace
+  engineering.
+</p>
+<div *ngIf="showDetails">
+  <h3>Button clicks:</h3>
+  <ul>
+    <li
+      *ngFor="let click of clicks; let i = index"
+      [ngClass]="{ 'blue-background-white-text': i >= 4 }"
+      [ngStyle]="{
+        'background-color': i >= 4 ? 'blue' : '',
+        color: i >= 4 ? 'white' : ''
+      }"
+    >
+      {{ click }}
+    </li>
+  </ul>
+</div>
+</div>

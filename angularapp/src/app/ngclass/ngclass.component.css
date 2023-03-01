@@ -1,0 +1,12 @@
+.blue-background-white-text {
+    background-color: blue;
+    color: white;
+  }
+  p{
+    height: 150px;
+    width: 800px;
+    background-color: antiquewhite;
+  }
+  .as{
+  margin-left: 100px;
+  }

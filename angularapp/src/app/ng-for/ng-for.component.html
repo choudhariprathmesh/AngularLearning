@@ -1,0 +1,62 @@
+<div>
+  <div>
+    {{ title }}
+  </div>
+  <div>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Cast</th>
+            <th>ReleaseDate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let movie of movies;
+              let i = index;
+              let evenItem = even;
+              let oddItem = odd
+            "
+            [class.even]="evenItem"
+            [class.odd]="oddItem"
+          >
+            <td>{{ i + 1 }}</td>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.director }}</td>
+            <td>{{ movie.cast }}</td>
+            <td>{{ movie.releaseDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<ul>
+  <li *ngFor="let song of favSongs">{{ song }}</li>
+</ul>
+
+<!-- 
+<div>
+  <select [(ngModel)]="selectedCountry" (ngModelChange)="updateStates()">   
+    <option *ngFor="let country of countries">{{country}}</option>
+  </select> <br> State
+  <select  [(ngModel)]="selectedState" [value]="state" [value]="country"> 
+  <option *ngFor="let state of states" >{{state}}</option>
+</select>
+</div> -->
+{{ title1 }} <br />
+<br />
+country
+<select (change)="updateStates($event.target.value)">
+  <option *ngFor="let country of countries">{{ country }}</option>
+</select>
+States
+
+<select>
+  <option *ngFor="let state of filteredStates">{{ state }}</option>
+</select>

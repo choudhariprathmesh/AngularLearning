@@ -1,0 +1,27 @@
+<!-- <p>test2 works!</p> -->
+<!-- <button (click)='onButtonClick()'> Click me </button>
+<p>count:{{count}}</p>
+<input type="text" (keyup)="onKeyUp($event)">
+
+<h1>Two way databinding</h1>
+
+<input type="text" [(ngModel)]="firstName">
+
+-->
+{{firstName}}
+<!-- 1 -->
+<input [(ngModel)]="username" type="text">
+<!-- 2 -->
+<!-- <input [(ngModel)]="username" type="text"> -->
+<p>Your username is: {{ username }}</p>
+<!-- 3 -->
+<input [(ngModel)]="username" type="text">
+<!-- <p>Your username is: {{ username }}</p> -->
+<button [disabled]="!username" (click)="submit()">Submit</button><br><br>
+<!-- 4 -->
+<input [(ngModel)]="username" type="text">
+<!-- <p>Your username is: {{ username }}</p> -->
+<button [disabled]="!username" (click)="submit1()">Reset</button>
+
+
+<button (click)="sendToParent()">Click me from Test2</button> 

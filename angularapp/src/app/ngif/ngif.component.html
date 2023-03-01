@@ -1,0 +1,14 @@
+<div style="margin-left: 15px;">
+    <div *ngFor="let p of posts">
+        <div>{{p.title}}</div>
+        <div><img *ngIf="p.imageUrl, else noImage" width="200px" [src]="p.imageUrl" alt=" no img "></div>
+        <ng-template #noImage> <p> No Image Avilable</p></ng-template>
+        <div>{{p.contentname}}</div>
+    </div>
+</div>
+
+<!--
+    <ng-template #elseBlock>
+        <p>Content Not Avilable</p>
+    </ng-template> 
+-->

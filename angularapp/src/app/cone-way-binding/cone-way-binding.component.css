@@ -1,0 +1,156 @@
+/* .form-container {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex
+}   */
+
+
+html,
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  overflow-x: hidden;
+  display: flex;
+}
+.before-content, .after-content {
+  /* Add styles for the before and after content */
+  height: 100px;
+  background-color: red;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  min-width: 50vw;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4ch;
+}
+
+section:nth-child(even) {
+  background-color: teal;
+  color: white;
+}
+.read-article{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  color: #000;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: arial;
+  text-decoration: none;
+  box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+}
+.read-article:hover{
+    background: #d5d5d5;
+    box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+}
+iframe[sandbox] .read-article{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 20px; */
+    /* background-color: red; */
+    background-color: #fff;
+    border: 2px solid black;
+    height: 600px;
+    /* width: 700px; */
+  }
+  
+  .form-left, .form-right {
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 15px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+    background-color: #fff;
+    width: 400px;
+    height: 600px;
+  }
+  
+  .form-left {
+    margin-right: 10px;
+  }
+  
+  .form-right {
+    margin-left: 10px;
+  }
+  
+  .form-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .mat-label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .mat-select {
+    font-size: 16px;
+  }
+  
+  .mat-checkbox {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  button[type="submit"] {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #2196f3;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0d47a1;
+  }
+  

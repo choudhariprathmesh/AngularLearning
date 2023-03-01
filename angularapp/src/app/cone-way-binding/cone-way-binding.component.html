@@ -1,0 +1,192 @@
+<!-- <p>cone-way-binding works!</p>
+<img [src] ="img" alt="">
+ name:- {{name }}
+
+<input [(ngModel)]=" data">
+<h2>{{data}}</h2>
+
+<h1>{{array[0]}}</h1> 
+<h1>{{array[1]}}</h1> 
+<h1>{{array[2]}}</h1> 
+<h1>{{array[3]}}</h1>  -->
+
+<div class="before-content">
+  <!-- Add your content here -->
+  hello
+</div>
+<main (wheel)="onScroll($event)">
+  <section>
+    <h1>1</h1>
+  </section>
+  <section>
+    <h1>2</h1>
+  </section>
+  <section>
+    <h1>3</h1>
+  </section>
+  <section>
+    <h1>4</h1>
+  </section>
+</main>
+
+<a href="https://alvarotrigo.com/blog/scroll-horizontally-with-mouse-wheel-vanilla-java/" target="_blank" class="read-article">
+  <!-- Read the article 👉 -->
+</a>
+
+<div class="after-content">
+  <!-- Add your content here -->
+  hello
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>{{array.name}}</h1>
+<h1>{{array.age}}</h1> -->
+
+<!-- <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign="start center" fxFlex="50">
+      <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Full Name*</mat-label>
+          <input matInput type="text" formControlName="fullName" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Birthdate*</mat-label>
+          <input matInput type="date" formControlName="birthdate" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Gender*</mat-label>
+          <mat-select formControlName="gender" required>
+            <mat-option value="" disabled selected>Select a gender</mat-option>
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Country*</mat-label>
+          <mat-select formControlName="country" required>
+            <mat-option value="" disabled selected>Select a country</mat-option>
+            <mat-option value="US">United States</mat-option>
+            <mat-option value="CA">Canada</mat-option>
+            <mat-option value="MX">Mexico</mat-option>
+            Add more countries as needed
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Phone Number*</mat-label>
+          <input matInput type="tel" formControlName="phoneNumber" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Bio</mat-label>
+          <textarea matInput formControlName="bio"></textarea>
+        </mat-form-field>
+      </form>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start center" fxFlex="50">
+      <form [formGroup]="accountDetailsForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Username*</mat-label>
+          <input matInput type="text" formControlName="userName" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email*</mat-label>
+          <input matInput type="email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password*</mat-label>
+          <input matInput type="password" formControlName="password" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Confirm Password*</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" required>
+          <mat-error *ngIf="passwordsDoNotMatch()">Passwords do not match.</mat-error>
+        </mat-form-field>
+        <mat-checkbox formControlName="terms">
+          I accept the terms and conditions.
+        </mat-checkbox>
+        <button mat-raised-button color="primary" type="submit" [disabled]="accountDetailsForm.invalid || !accountDetailsForm.get('terms').value">Create Account</button>
+      </form>
+    </div>
+  </div> --> 
+
+  
+
+
+
+  <!-- <div class="form-container" fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="userDetailsForm" class="form-left" fxLayout="column" fxLayoutAlign="center start">
+      <h2 class="form-heading">User Details</h2>
+      <mat-form-field fxFlex>
+        <mat-label>Full Name</mat-label>
+        <input matInput type="text" formControlName="fullName" required>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Birthdate</mat-label>
+        <input matInput type="date" formControlName="birthdate" required>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender" required>
+          <mat-option value="" disabled selected>Select a gender</mat-option>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Country</mat-label>
+        <mat-select formControlName="country" required>
+          <mat-option value="" disabled selected>Select a country</mat-option>
+          <mat-option value="US">United States</mat-option>
+          <mat-option value="CA">India</mat-option>
+          <mat-option value="MX">Mexico</mat-option>
+          
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="tel" formControlName="phoneNumber" required>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Bio</mat-label>
+        <textarea matInput formControlName="bio"></textarea>
+      </mat-form-field>
+    </form>
+  
+    <form [formGroup]="accountDetailsForm" class="form-right" fxLayout="column" fxLayoutAlign="center start">
+      <h2 class="form-heading">Account Details</h2>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" formControlName="userName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" required>
+        <mat-error *ngIf="passwordsDoNotMatch()">Passwords do not match.</mat-error>
+      </mat-form-field>
+      <mat-checkbox formControlName="terms">
+        I accept the terms and conditions.
+      </mat-checkbox>
+      <button mat-raised-button color="primary" type="submit" [disabled]="accountDetailsForm.invalid || !accountDetailsForm.get('terms').value">Submit</button>
+    </form>
+  </div>
+   -->
