@@ -69,7 +69,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
+
+<input type="date" [(ngModel)]="age">
+<button type="button" (click)="ageCalculator()">Calculate</button>
+<p *ngIf="age">{{showAge}}</p>
+
 
 
 <!-- <div class="container">

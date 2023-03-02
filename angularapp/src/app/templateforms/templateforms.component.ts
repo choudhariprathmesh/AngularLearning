@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { MyserviceService } from "../services/myservice.service";
 
 @Component({
   selector: "app-templateforms",
@@ -8,7 +9,8 @@ import { NgForm } from "@angular/forms";
 })
 export class TemplateformsComponent implements OnInit {
 
-
+  age;
+  showAge;
 
   // email: string;
   // isValidEmail: boolean = true;
@@ -38,9 +40,12 @@ export class TemplateformsComponent implements OnInit {
       id: '2', value: 'Female'
     }
   ]
-  constructor() { }
+  constructor(private objService:MyserviceService) { }
 
   ngOnInit() {
+
+this.objService.display();
+this.objService.print();
   }
 
 //   login(form: NgForm) {
@@ -79,7 +84,9 @@ if (form.valid && this.confirmPassword === this.user.password) {
 }
 }
 
-
+ageCalculator(){
+  this.showAge = this.objService.ageCalculator(this.age);
+}
 
 
    }

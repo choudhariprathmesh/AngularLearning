@@ -44,6 +44,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { ConeWayBindingComponent } from './cone-way-binding/cone-way-binding.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { ConeWayBindingComponent } from './cone-way-binding/cone-way-binding.com
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

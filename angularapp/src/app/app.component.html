@@ -4,7 +4,7 @@
   <h1>
     <!-- Welcome to  -->
     {{ title }}!
-    
+
     <!-- {{name}} {{data.dept}} -->
   </h1>
 
@@ -37,12 +37,81 @@
 <!-- <p appCustom>Normal para</p> -->
 <!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
 <!-- <app-templateforms></app-templateforms> -->
-<app-reactiveform></app-reactiveform>
+<!-- <app-reactiveform></app-reactiveform> -->
 
 <!-- <div *ngFor="let arrays of array"></div> -->
 
 <!-- <app-cone-way-binding [array]="array"> </app-cone-way-binding> -->
 <!-- <app-cone-way-binding> </app-cone-way-binding> -->
 
-<router-outlet></router-outlet>
+<!-- <ng-container *ngFor="let product of products">
+  Product Name : <strong class="text-success">{{product.name}}</strong>
+  Product Id : <strong class="text-success">{{product.id}}</strong>
 
+</ng-container> -->
+
+<!-- <ul>
+  <li *ngFor="let user of Users">
+    {{user.id}}
+    {{user.name}}
+    {{user.email}}
+    {{user.phone}}
+    {{user.website}}
+    {{user.company.name}}
+    {{user.address.city}}
+  </li>
+</ul> -->
+
+<table mat-table [dataSource]="Users">
+  
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let user">{{user.id}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let user">{{user.name}}</td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let user">{{user.email}}</td>
+  </ng-container>
+
+  <!-- Phone Column -->
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef>Phone</th>
+    <td mat-cell *matCellDef="let user">{{user.phone}}</td>
+  </ng-container>
+
+  <!-- Website Column -->
+  <ng-container matColumnDef="website">
+    <th mat-header-cell *matHeaderCellDef>Website</th>
+    <td mat-cell *matCellDef="let user">{{user.website}}</td>
+  </ng-container>
+
+  <!-- Company Column -->
+  <ng-container matColumnDef="company">
+    <th mat-header-cell *matHeaderCellDef>Company</th>
+    <td mat-cell *matCellDef="let user">{{user.company.name}}</td>
+  </ng-container>
+
+  <!-- City Column -->
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef>City</th>
+    <td mat-cell *matCellDef="let user">{{user.address.city}}</td>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="['id', 'name', 'email', 'phone', 'website', 'company', 'city']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'email', 'phone', 'website', 'company', 'city']"></tr>
+
+</table>
+
+
+
+<router-outlet></router-outlet>
