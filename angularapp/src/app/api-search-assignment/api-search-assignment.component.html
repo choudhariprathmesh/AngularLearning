@@ -1,0 +1,59 @@
+<!-- <p>api-search-assignment works!</p>
+<ul>
+  <li *ngFor="let user of Users">
+    {{user.id}}
+    {{user.name}}
+    {{user.email}}
+    {{user.phone}}
+    {{user.website}}
+    {{user.company.name}}
+    {{user.address.city}}
+  </li>
+</ul> -->
+
+<div class="row justify-content-center" class="div">
+    <div class="col-md-8">
+        <label for="serch"> Search by Employee name</label>
+        <input type="text" class="form-control" placeholder="Enter Employee Name" [(ngModel)]="namesearch">
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">
+                      ID
+                    </th>
+                    <th scope="col">
+                        Name
+                      </th>
+                      <th scope="col">
+                        Email
+                      </th>
+                      <th scope="col">
+                        Phone
+                      </th>
+                      <th scope="col">
+                        Website
+                      </th>
+                      <th scope="col">
+                        Company
+                      </th>
+                      <th scope="col">
+                        City
+                      </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let User of Users | search:namesearch">
+                    <th scope="row"> {{User.id}} </th>
+                    <td>{{User.name}}</td>
+                    <td>{{User.email}}</td>
+                    <td>{{User.phone}}</td>
+                    <td>{{User.website}}</td>
+                    <td>{{User.company.name}}</td>
+                    <td>{{User.address.city}}</td>                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 

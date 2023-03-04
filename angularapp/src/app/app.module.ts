@@ -45,6 +45,12 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { ConeWayBindingComponent } from './cone-way-binding/cone-way-binding.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PipeexampleComponent } from './pipeexample/pipeexample.component';
+import { CustomPipe } from './custom.pipe';
+import { SearchPipe } from './search.pipe';
+import { ProductFillterComponent } from './product-fillter/product-fillter.component';
+import { ApisearchPipe } from './apisearch.pipe';
+import { ApiSearchAssignmentComponent } from './api-search-assignment/api-search-assignment.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +69,13 @@ import { HttpClientModule } from '@angular/common/http';
     CustomDirective,
     TemplateformsComponent,
     ReactiveformComponent,
-    ConeWayBindingComponent
+    ConeWayBindingComponent,
+    PipeexampleComponent,
+    CustomPipe,
+    SearchPipe,
+    ProductFillterComponent,
+    ApisearchPipe,
+    ApiSearchAssignmentComponent
   ],
   imports: [
     BrowserModule,

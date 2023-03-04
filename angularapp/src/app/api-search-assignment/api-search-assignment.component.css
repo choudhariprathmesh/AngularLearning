@@ -1,0 +1,13 @@
+.div{
+    margin-left: 300px;
+    background-color: rgb(255, 240, 250);
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.4);
+    width: 1000px;
+}
+table{
+
+    padding-top: 10px;
+    background-color: rgb(133, 173, 207);
+    width: 1000px;
+    
+  }

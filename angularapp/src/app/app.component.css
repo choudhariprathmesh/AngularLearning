@@ -23,7 +23,7 @@ table{
   /* Style table header */
   .mat-header-row {
     background-color: #a48d8d;
-    font-weight: bold;
+    font-weight: bold; 
   }
   
   /* Set width of columns */
