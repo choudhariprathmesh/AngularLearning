@@ -1,0 +1,10 @@
+thead{
+    background-color: rgb(207, 176, 221);
+}
+tbody{
+    background-color: rgb(225, 207, 222);
+}
+a{
+    text-decoration: none;
+    color: red;
+}

@@ -1,0 +1,66 @@
+<div>
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            UserName
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Website
+                        </th>
+                        <th>
+                            Company
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {{userPost.id}}
+                        </td>
+                        <td>
+                            {{userPost.name}}
+                        </td>
+                        <td>
+                            {{userPost.username}}
+                        </td>
+                        <td>
+                            {{userPost.email}}
+                        </td>
+                        <td>
+                            {{userPost.phone}}
+                        </td>
+                        <td>
+                            {{userPost.website}}
+                        </td>
+                        <td>
+                            {{userPost.company.name}}
+                        </td>
+                        <td>
+                            {{userPost.address.city}}
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a (click)="goBackToParent()"  class="btn btn-info">Go Back to User</a>
+</div>

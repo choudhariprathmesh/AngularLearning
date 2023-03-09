@@ -1,0 +1,25 @@
+
+<!-- <div class="box">
+    User name: <strong>{{userName}}</strong>
+    <br><br>
+    <input type="text" placeholder="update user  name" #uname>
+    <button class="btn btn-primary ms-2" (click)="updateUserName(uname)" >Update</button>
+</div> -->
+<p>comp2 works!</p>
+
+<div class="box">
+    <div>
+        User FirstName: <strong>{{userName}}</strong>
+    </div>
+    <div>
+        User LastName: <strong>{{firstName}}</strong>
+    </div>
+    <div>
+        User Email: <strong>{{lastName}}</strong>
+    </div>
+    <br>
+    <input type="text" placeholder="Update User FirstName" #uname> <br> <br>
+    <input type="text" placeholder="Update User LastName" #fname> <br> <br>
+    <input type="text" placeholder="Update User Email" #lname>
+    <button class="btn btn-success ms-2" (click)="updateName(fname.value, lname.value,uname.value)">Update</button>
+  </div>

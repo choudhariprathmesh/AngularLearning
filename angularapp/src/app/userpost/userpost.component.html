@@ -1,0 +1,50 @@
+
+<div>
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            UserName
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Website
+                        </th>
+                        <th>
+                            Company
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of arrPost">
+                        <td> <a [routerLink]="['/userdetails', user.id]" >{{user.id}}</a> </td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                        <td>{{user.website}}</td>
+                        <td>{{user.company.name}}</td>
+                        <td>{{user.address.city}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div>
+</div> 

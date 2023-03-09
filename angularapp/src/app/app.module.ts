@@ -51,6 +51,23 @@ import { SearchPipe } from './search.pipe';
 import { ProductFillterComponent } from './product-fillter/product-fillter.component';
 import { ApisearchPipe } from './apisearch.pipe';
 import { ApiSearchAssignmentComponent } from './api-search-assignment/api-search-assignment.component';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { Comp4Component } from './comp4/comp4.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ProductComponent } from './product/product.component';
+import { LaptopComponent } from './product/laptop/laptop.component';
+import { MobileComponent } from './product/mobile/mobile.component';
+import { CameraComponent } from './product/camera/camera.component';
+import { WatchComponent } from './product/watch/watch.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { UserpostComponent } from './userpost/userpost.component';
+import { UserpostdetailsComponent } from './userpostdetails/userpostdetails.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +92,24 @@ import { ApiSearchAssignmentComponent } from './api-search-assignment/api-search
     SearchPipe,
     ProductFillterComponent,
     ApisearchPipe,
-    ApiSearchAssignmentComponent
+    ApiSearchAssignmentComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
+    AboutusComponent,
+    ContactusComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    ProductComponent,
+    LaptopComponent,
+    MobileComponent,
+    CameraComponent,
+    WatchComponent,
+    DemopostComponent,
+    DemopostdetailsComponent,
+    UserpostComponent,
+    UserpostdetailsComponent
   ],
   imports: [
     BrowserModule,
