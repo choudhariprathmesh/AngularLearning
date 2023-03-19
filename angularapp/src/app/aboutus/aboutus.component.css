@@ -1,0 +1,25 @@
+* {
+  margin-top: 10px;
+}
+input {
+  margin-left: 100px;
+  border: 2px solid violet;
+  width: 300px;
+  border-radius: 30px;
+}
+table {
+  margin-top: 10px;
+}
+button {
+  margin-left: 10px;
+  width: 100px;
+  background-color: violet;
+  text-decoration: none;
+  border-radius: 30px;
+}
+thead {
+  background-color: rgb(123, 199, 201);
+}
+tbody {
+  background-color: rgb(155, 224, 214);
+}
