@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DemoService } from './services/demo.service';
 import { MyserviceService } from './services/myservice.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,10 +10,13 @@ import { MyserviceService } from './services/myservice.service';
 })
 
 export class AppComponent implements OnInit {
-  
+  title='Angular Assignment'
   products={};
   Users:any;
-  constructor(private myservice: MyserviceService,private demoService: DemoService ){
+
+  
+  // private wikipediaService: WikipediaService,
+  constructor(private myservice: MyserviceService,private demoService: DemoService){
     // demoService.Users().subscribe((data)=>{
     //   console.log('data',data);
     //   this.Users=data;      
@@ -20,6 +24,11 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(): void {
+
+    // this.rapidService.getFinance().subscribe((data)=>{
+    //   console.log('data',data)
+    //   this.rapiData = data;     
+    // })
     this.products = this.myservice.products;
     // this.demoService.Users().subscribe(res => {
     //   console.log('user api results', res);
@@ -31,7 +40,9 @@ export class AppComponent implements OnInit {
       this.Users=data;      
     })
   }
-  
+
+
+ 
   array=["akash","suhas","ashitosh","prathmesh"];
 
   parentToChild: string = "I am From Parent";
@@ -50,7 +61,7 @@ export class AppComponent implements OnInit {
   ]
 
 
-  title = 'Angular Assignment';
+  // title = 'Angular Assignment';
   name = 'Prathmesh';
   data = {
     name: 'prathmesh',

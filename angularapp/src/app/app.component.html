@@ -143,6 +143,48 @@
 
 </table> -->
 
+<!-- <input type="text" [(ngModel)]="query" (keyup.enter)="search()" />
+<button (click)="search()">Search</button> -->
+<!-- <ul>
+  <li *ngFor="let result of results">
+    <h3>{{ result.title }}</h3>
+    <p>{{ result.snippet }}</p>
+    <p>{{ result.wordcount }} words</p>
+  </li>
+</ul> -->
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Snippet</th>
+      <th>Word Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of results">
+      <td>{{ result.title }}</td>
+      <td>{{ result.snippet }}</td>
+      <td>{{ result.wordcount }}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+
+<!-- 
+<form (submit)="search(searchBox.value)">
+  <input type="text" #searchBox>
+  <button type="submit">Search</button>
+</form>
+
+<div *ngFor="let result of results">
+  <h2>{{ result.title }}</h2>
+  <p>Word count: {{ result.wordcount }}</p>
+  <p>{{ result.snippet }}</p>
+</div> -->
+
+
+
+
 <header>
   <nav>
     <ul class="nav nav-tabs">
@@ -152,8 +194,14 @@
     <li class="nav-item"> <a routerLinkActive="active" routerLink="product"  class="nav-link"> Product</a></li>
     <li class="nav-item"> <a routerLinkActive="active" routerLink="post"  class="nav-link"> Post</a></li>
     <li class="nav-item"> <a routerLinkActive="active" routerLink="user"  class="nav-link"> User</a></li>
+    <li class="nav-item"> <a routerLinkActive="active" routerLink="login"  class="nav-link"> Login</a></li>
+    <li class="nav-item"> <a  routerLinkActive="active" routerLink="customer" class="nav-link">Cutomer</a> </li>
+    <li class="nav-item"> <a  routerLinkActive="active" routerLink="admin" class="nav-link">Admin</a> </li>
+    <li class="nav-item"> <a  routerLinkActive="active" routerLink="todo" class="nav-link">ToDo</a> </li>
     </ul>
   </nav>
 </header>
+
+
 
 <router-outlet></router-outlet>

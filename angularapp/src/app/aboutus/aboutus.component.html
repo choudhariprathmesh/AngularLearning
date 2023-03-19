@@ -1,1 +1,22 @@
 <p>aboutus works!</p>
+<form style="padding-left: 500px;" (submit)="search(searchBox.value)">
+    <input type="text" #searchBox>
+    <button type="submit">Search</button>
+  </form>
+  
+  <table *ngIf="results" class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Word Count</th>
+        <th>Snippet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.title }}</td>
+        <td>{{ result.wordcount }}</td>
+        <td>{{ result.snippet }}</td>
+      </tr>
+    </tbody>
+  </table>

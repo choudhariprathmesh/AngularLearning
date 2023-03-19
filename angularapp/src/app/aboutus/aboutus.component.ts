@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WikipediaApiService } from '../services/wikipedia.service';
 
 @Component({
   selector: 'app-aboutus',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutusComponent implements OnInit {
 
-  constructor() { }
+  results: any[];
+  constructor(private wikipediaApi: WikipediaApiService) { }
 
   ngOnInit() {
   }
-
+  search(searchTerm: string) {
+    this.wikipediaApi.search(searchTerm).subscribe(response => {
+      this.results = response.query.search;
+    });
+  }
 }

@@ -22,13 +22,13 @@ export class MyserviceService {
       return this.showAge = Math.floor(timeDiff / (1000 * 3600 * 24) / 365);
     }
   }
-  print() {
-    alert('print method called');
-  }
+  // print() {
+  //   alert('print method called');
+  // }
 
-  display() {
-    alert ('display called');
-  }
+  // display() {
+  //   alert ('display called');
+  // }
 
 }
  

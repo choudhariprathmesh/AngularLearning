@@ -68,6 +68,10 @@ import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
 import { UserpostComponent } from './userpost/userpost.component';
 import { UserpostdetailsComponent } from './userpostdetails/userpostdetails.component';
+import { UserdeatilsComponent } from './userdeatils/userdeatils.component';
+import { TodoComponent } from './todo/todo.component';
+import { LoginformComponent } from './loginform/loginform.component';
+
 
 @NgModule({
   declarations: [
@@ -109,7 +113,10 @@ import { UserpostdetailsComponent } from './userpostdetails/userpostdetails.comp
     DemopostComponent,
     DemopostdetailsComponent,
     UserpostComponent,
-    UserpostdetailsComponent
+    UserpostdetailsComponent,
+    UserdeatilsComponent,
+    TodoComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,

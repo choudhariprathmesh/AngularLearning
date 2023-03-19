@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 import { MyserviceService } from "../services/myservice.service";
 
 @Component({
@@ -29,9 +30,9 @@ export class TemplateformsComponent implements OnInit {
   //   course: '',
   //   gender: ''
   // }
-  // defaultValue = 'Angular';
+  defaultValue = 'Angular';
   defaultGender = 'Male';
-  // courses: string[] = ['Angular', 'Javascript', 'Typescript'];
+  courses: string[] = ['Angular', 'Javascript', 'Typescript'];
   genders = [ 
     {
       id: '1', value: 'Male'
@@ -40,12 +41,12 @@ export class TemplateformsComponent implements OnInit {
       id: '2', value: 'Female'
     }
   ]
-  constructor(private objService:MyserviceService) { }
+  constructor(private objService:MyserviceService,private route: Router) { }
 
   ngOnInit() {
 
-this.objService.display();
-this.objService.print();
+// this.objService.display();
+// this.objService.print();
   }
 
 //   login(form: NgForm) {
@@ -81,6 +82,7 @@ onSubmit(form: NgForm) {
 console.log(form);
 if (form.valid && this.confirmPassword === this.user.password) {
 // submit the form
+this.route.navigate(['/userdetails']);
 }
 }
 
